@@ -19,9 +19,9 @@ to install latest updates.
 
   `tar xf slide_pi_stretch_0.9.0.tar.gz`
 
-	`sudo mv slide_0.9.0/slide /usr/local/bin/`
+  `sudo mv slide_0.9.0/slide /usr/local/bin/`
 
-6. Install additional librarys used by slideshow
+6. Install additional librarys used by slideshow
 
   `sudo apt install libexif12 qt5-default lightdm`
 
@@ -39,17 +39,17 @@ to install latest updates.
 
   `nano /home/pi/.config/lxsession/LXDE/`
 
-  insert:
+  insert:
 
   `@xset s noblank`
 
-	`@xset s off`
+  `@xset s off`
 
-	`@xset -dpms`
+  `@xset -dpms`
 
-	`@slide -p -t 60 -o 0 -p /home/pi/picframe`
+  `@slide -p -t 60 -o 0 -p /home/pi/picframe`
 
-	```
+  ```
   slide [-t rotation_seconds] [-o background_opacity(0..255)] [-b blur_radius] -p image_folder
 		• image_folder: where to search for images (.jpg files), currently non-recursively
 		• rotation_seconds(default=30): time until next random image is chosen from the given folder
@@ -58,7 +58,7 @@ to install latest updates.
   ```
 10. Disable screen blanking, which the Raspberry Pi normally does after 10 minutes, by editing the following file:
 
-	`nano /etc/lightdm/lightdm.conf`
+  `nano /etc/lightdm/lightdm.conf`
 
   ```
 	[SeatDefaults]
