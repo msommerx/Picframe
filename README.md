@@ -69,7 +69,7 @@ to install latest updates.
   * switch on and off the frame
   * sync cloud folder to download new pictures
 
- `cd /etc/crontab -e``
+ `cd /etc/crontab -e`
 
  ```
 0 22 * * * /opt/vc/bin/tvservice -o
