@@ -96,3 +96,6 @@ display_rotate = 3   270 degrees
 display_rotate = 0x10000   horizontal flip
 display_rotate = 0x20000   vertical flip
 ```
+
+## pictures
+See folder pictures for pictures.
