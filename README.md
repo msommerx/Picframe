@@ -6,6 +6,27 @@ I've started this project to share pictures with my grandmas. I wanted to share 
 Please feel free to build your own.
 Contact me for frames.
 
+## Used Parts
+
+(amazon affiliate links)
+
+https://amzn.to/33aSveS - 1x FullHD display 7"
+
+https://amzn.to/2oDQby6 - 1x microUSB splitter cable 
+
+https://amzn.to/2N9K4Lq - 1x microHDMI flat cable 10 cm
+
+https://amzn.to/36uITOb - 1x microHDMI plug 90 °
+
+https://de.aliexpress.com/item/33058579088.html?spm=a2g0o.productlist.0.0.6cf82c86uWIagB&algo_pvid=56df71e7-d072-43b8-aa82-204e2c4a2e07&algo_expid=56df71e7-d072-43b8-aa82-204e2c4a2e07-1&btsid=ba4caa57-4bc3-47a0-b3c5-d40c616bcd54&ws_ab_test=searchweb0_0,searchweb201602_1,searchweb201603_52 - 1x microHDMI Plug 
+
+https://amzn.to/36BeGNI - 1x RaspberryPi Zero without header
+
+small wood screws about 7 mm - 2x
+
+You can also order everything except the monitor on Aliexpress.
+
+
 ## Install
 
 1. use [Etcher](https://www.balena.io/etcher/) to burn Raspbian Buster with desktop on your SD card.
@@ -13,7 +34,7 @@ Contact me for frames.
 3. upload wpa file to /boot partition. Don't forget to enter your WiFi credentials first.
 4. ssh to your RaspberryPi and run `sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade`
 to install latest updates.
-5. Install slideshow by [NautiluX](https://github.com/NautiluX)
+5. Install slideshow by [NautiluX](https://github.com/NautiluX)
 
   `wget https://github.com/NautiluX/slide/releases/download/v0.9.0/slide_pi_stretch_0.9.0.tar.gz`
 
@@ -72,12 +93,12 @@ to install latest updates.
  `cd /etc/crontab -e`
 
  ```
-0 22 * * * /opt/vc/bin/tvservice -o
-0 7 * * * /opt/vc/bin/tvservice -p && sudo systemctl restart display-manager
-*/60 * * * rclone sync remote:erika picframe
-  ```
+ 0 22 * * * /opt/vc/bin/tvservice -o
+ 0 7 * * * /opt/vc/bin/tvservice -p && sudo systemctl restart display-manager
+ */60 * * * rclone sync remote:erika picframe
+ ```
 
-Switch on at 7 am and switch off at 22 pm. Sync every 60 minutes.
+ Switch on at 7 am and switch off at 22 pm. Sync every 60 minutes.
 
 12. To rotate the screen, depending on the build in direction of the screen, add value
 
@@ -87,15 +108,16 @@ Switch on at 7 am and switch off at 22 pm. Sync every 60 minutes.
 
  `/boot/config.txt`
 
-```
-display_rotate = 0   Normal
-display_rotate = 1   90 degrees
-display_rotate = 2   180 degrees
-NOTE: You can rotate both the image and touch interface 180º by entering lcd_rotate=2 instead
-display_rotate = 3   270 degrees
-display_rotate = 0x10000   horizontal flip
-display_rotate = 0x20000   vertical flip
-```
+ ```
+ display_rotate = 0   Normal
+ display_rotate = 1   90 degrees
+ display_rotate = 2   180 degrees
+ NOTE: You can rotate both the image and touch interface 180º by entering lcd_rotate=2 instead
+ display_rotate = 3   270 degrees
+ display_rotate = 0x10000   horizontal flip
+ display_rotate = 0x20000   vertical flip
+ ```
 
-## pictures
+## Pictures
+
 See folder pictures for pictures.
