@@ -10,19 +10,13 @@ Contact me for frames.
 
 (amazon affiliate links)
 
-https://amzn.to/33aSveS - 1x FullHD display 7"
-
-https://amzn.to/2oDQby6 - 1x microUSB splitter cable 
-
-https://amzn.to/2N9K4Lq - 1x microHDMI flat cable 10 cm
-
-https://amzn.to/36uITOb - 1x microHDMI plug 90 °
-
-https://de.aliexpress.com/item/33058579088.html?spm=a2g0o.productlist.0.0.6cf82c86uWIagB&algo_pvid=56df71e7-d072-43b8-aa82-204e2c4a2e07&algo_expid=56df71e7-d072-43b8-aa82-204e2c4a2e07-1&btsid=ba4caa57-4bc3-47a0-b3c5-d40c616bcd54&ws_ab_test=searchweb0_0,searchweb201602_1,searchweb201603_52 - 1x microHDMI Plug 
-
-https://amzn.to/36BeGNI - 1x RaspberryPi Zero without header
-
-small wood screws about 7 mm - 2x
+* https://amzn.to/33aSveS - 1x FullHD display 7"
+* https://amzn.to/2oDQby6 - 1x microUSB splitter cable 
+* https://amzn.to/2N9K4Lq - 1x microHDMI flat cable 10 cm
+* https://amzn.to/36uITOb - 1x microHDMI plug 90 °
+*https://de.aliexpress.com/item/33058579088.html?spm=a2g0o.productlist.0.0.6cf82c86uWIagB&algo_pvid=56df71e7-d072-43b8-aa82-204e2c4a2e07&algo_expid=56df71e7-d072-43b8-aa82-204e2c4a2e07-1&btsid=ba4caa57-4bc3-47a0-b3c5-d40c616bcd54&ws_ab_test=searchweb0_0,searchweb201602_1,searchweb201603_52 - 1x microHDMI Plug 
+* https://amzn.to/36BeGNI - 1x RaspberryPi Zero without header
+* small wood screws about 7 mm - 2x
 
 You can also order everything except the monitor on Aliexpress.
 
@@ -36,11 +30,11 @@ You can also order everything except the monitor on Aliexpress.
 to install latest updates.
 5. Install slideshow by [NautiluX](https://github.com/NautiluX)
 
-  `wget https://github.com/NautiluX/slide/releases/download/v0.9.0/slide_pi_stretch_0.9.0.tar.gz`
-
-  `tar xf slide_pi_stretch_0.9.0.tar.gz`
-
-  `sudo mv slide_0.9.0/slide /usr/local/bin/`
+  ```
+  wget https://github.com/NautiluX/slide/releases/download/v0.9.0/slide_pi_stretch_0.9.0.tar.gz
+  tar xf slide_pi_stretch_0.9.0.tar.gz
+  sudo mv slide_0.9.0/slide /usr/local/bin/
+  ```
 
 6. Install additional librarys used by slideshow
 
@@ -56,19 +50,19 @@ to install latest updates.
 
 9. Autorun slideshow and prevent display from standby
 
-  `mkdir -p /home/pi/.config/lxsession/LXDE/`
-
-  `nano /home/pi/.config/lxsession/LXDE/`
+  ```
+  mkdir -p /home/pi/.config/lxsession/LXDE/
+  nano /home/pi/.config/lxsession/LXDE/
+  ```
 
   insert:
 
-  `@xset s noblank`
-
-  `@xset s off`
-
-  `@xset -dpms`
-
-  `@slide -p -t 60 -o 0 -p /home/pi/picframe`
+  ```
+  @xset s noblank
+  @xset s off
+  @xset -dpms
+  @slide -p -t 60 -o 0 -p /home/pi/picframe
+  ```
 
   ```
   slide [-t rotation_seconds] [-o background_opacity(0..255)] [-b blur_radius] -p image_folder
