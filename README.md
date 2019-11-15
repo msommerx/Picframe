@@ -11,10 +11,10 @@ Contact me for frames.
 (amazon affiliate links)
 
 * https://amzn.to/33aSveS - 1x FullHD display 7"
-* https://amzn.to/2oDQby6 - 1x microUSB splitter cable 
+* https://amzn.to/2oDQby6 - 1x microUSB splitter cable
 * https://amzn.to/2N9K4Lq - 1x microHDMI flat cable 10 cm
 * https://amzn.to/36uITOb - 1x microHDMI plug 90 °
-* https://de.aliexpress.com/item/33058579088.html?spm=a2g0o.productlist.0.0.6cf82c86uWIagB&algo_pvid=56df71e7-d072-43b8-aa82-204e2c4a2e07&algo_expid=56df71e7-d072-43b8-aa82-204e2c4a2e07-1&btsid=ba4caa57-4bc3-47a0-b3c5-d40c616bcd54&ws_ab_test=searchweb0_0,searchweb201602_1,searchweb201603_52 - 1x microHDMI Plug 
+* https://de.aliexpress.com/item/33058579088.html?spm=a2g0o.productlist.0.0.6cf82c86uWIagB&algo_pvid=56df71e7-d072-43b8-aa82-204e2c4a2e07&algo_expid=56df71e7-d072-43b8-aa82-204e2c4a2e07-1&btsid=ba4caa57-4bc3-47a0-b3c5-d40c616bcd54&ws_ab_test=searchweb0_0,searchweb201602_1,searchweb201603_52 - 1x microHDMI Plug
 * https://amzn.to/36BeGNI - 1x RaspberryPi Zero without header
 * small wood screws about 7 mm - 2x
 
@@ -48,11 +48,14 @@ to install latest updates.
 
   `rclone config`
 
+  Hint: If you use Dropbox and configure you RaPi via ssh, you need to authorize picframe on the machine you're working on.
+  Therefore download rclone on this machine, open cmd/terminal and navigate to the downloaded folder. Then follow the instructions on the RaPi.
+
 9. Autorun slideshow and prevent display from standby
 
   ```
   mkdir -p /home/pi/.config/lxsession/LXDE/
-  nano /home/pi/.config/lxsession/LXDE/
+  nano /home/pi/.config/lxsession/LXDE/autostart
   ```
 
   insert:
@@ -84,12 +87,12 @@ to install latest updates.
   * switch on and off the frame
   * sync cloud folder to download new pictures
 
- `cd /etc/crontab -e`
+ `crontab -e`
 
  ```
  0 22 * * * /opt/vc/bin/tvservice -o
  0 7 * * * /opt/vc/bin/tvservice -p && sudo systemctl restart display-manager
- */60 * * * rclone sync remote:erika picframe
+ */60 * * * rclone sync remote:{NameOfYourDropboxFolder} picframe
  ```
 
  Switch on at 7 am and switch off at 22 pm. Sync every 60 minutes.
