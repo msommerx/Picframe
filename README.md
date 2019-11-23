@@ -54,8 +54,7 @@ to install latest updates.
 9. Autorun slideshow and prevent display from standby
 
   ```
-  mkdir -p /home/pi/.config/lxsession/LXDE/
-  nano /home/pi/.config/lxsession/LXDE/autostart
+  sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
   ```
 
   insert:
@@ -114,6 +113,15 @@ to install latest updates.
  display_rotate = 0x10000   horizontal flip
  display_rotate = 0x20000   vertical flip
  ```
+
+13. Set fix screen resolution.
+
+```
+sudo raspi-config
+```
+ advanced config > resolution > 1920*1080, save and reboot
+
+
 
 ## Pictures
 
