@@ -37,7 +37,7 @@ to install latest updates.
 
   `mkdir -p /home/pi/.config/lxsession/LXDE/`
 
-  `nano /home/pi/.config/lxsession/LXDE/`
+  `nano /home/pi/.config/lxsession/LXDE/autostart`
 
   insert:
 
@@ -69,12 +69,12 @@ to install latest updates.
   * switch on and off the frame
   * sync cloud folder to download new pictures
 
- `cd /etc/crontab -e`
+ `crontab -e`
 
  ```
 0 22 * * * /opt/vc/bin/tvservice -o
 0 7 * * * /opt/vc/bin/tvservice -p && sudo systemctl restart display-manager
-*/60 * * * rclone sync remote:erika picframe
+*/60 * * * rclone sync remote:{NameOfYourDropboxfolder} picframe
   ```
 
 Switch on at 7 am and switch off at 22 pm. Sync every 60 minutes.
